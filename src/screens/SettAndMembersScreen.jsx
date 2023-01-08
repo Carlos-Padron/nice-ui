@@ -87,7 +87,7 @@ const SettAndMembersScreen = () => {
             <input
               type="text"
               placeholder="Search by email or name"
-              class="input input-bordered input-sm input-primary w-full max-w-xs"
+              className="input input-bordered input-sm input-primary w-full max-w-xs"
             />
           </div>
           <div className="flex flex-nowrap justify-between items-center">
