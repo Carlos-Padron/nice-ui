@@ -8,6 +8,7 @@ import {
   BookOpen,
   BarChart2,
 } from "react-feather";
+import { Link } from "react-router-dom";
 const MenuOptions = () => {
   return (
     <>
@@ -20,12 +21,12 @@ const MenuOptions = () => {
           <p className="text-sm">Search</p>
         </div>
       </label>
-      <div className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100">
+      <Link to={'/buy-credits'} className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100">
         <div className="mx-4 flex items-center">
           <Codesandbox color="#f86e72" size={15} className="mr-3" />
           <p className="text-sm">Credits</p>
         </div>
-      </div>
+      </Link>
       <label
         htmlFor="invite-modal"
         className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100"

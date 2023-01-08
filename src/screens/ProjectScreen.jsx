@@ -1,12 +1,35 @@
 import React from "react";
 import {
   AlertTriangle,
+  CornerUpRight,
+  Link,
+  Edit3,
+  ExternalLink,
   FileText,
   FolderPlus,
   MoreHorizontal,
   Share,
+  Trash,
   UploadCloud,
 } from "react-feather";
+import { Link as RouterLink } from "react-router-dom";
+
+const records = [
+  {
+    name: "Muse - Madness",
+    length: "6m",
+    language: "en-GB",
+    service: "Automatic",
+    uploaded: "07/01/2023",
+  },
+  {
+    name: "Metallica - King Nothing",
+    length: "5m",
+    language: "en-US",
+    service: "Automatic",
+    uploaded: "07/01/2023",
+  },
+];
 
 const ProjectScreen = () => {
   return (
@@ -47,15 +70,18 @@ const ProjectScreen = () => {
           </div>
         </div>
         <div className="flex-none">
-          <button className="btn btn-sm btn-primary text-white normal-case">
+          <RouterLink
+            to={"/buy-credits"}
+            className="btn btn-sm btn-primary text-white normal-case"
+          >
             Buy credits
-          </button>
+          </RouterLink>
         </div>
       </div>
 
       {/* Table */}
 
-      <div className="overflow-x-auto w-full pt-8">
+      <div className="w-full pt-8">
         <table className="table w-full">
           <thead>
             <tr>
@@ -65,7 +91,7 @@ const ProjectScreen = () => {
                 </label>
               </th>
               <th className="bg-blue-300 text-white">Name</th>
-              <th className="bg-blue-300 text-white">Lenght</th>
+              <th className="bg-blue-300 text-white">Length</th>
               <th className="bg-blue-300 text-white">Language</th>
               <th className="bg-blue-300 text-white">Service</th>
               <th className="bg-blue-300 text-white">Uploaded</th>
@@ -73,60 +99,99 @@ const ProjectScreen = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 flex justify-center items-center bg-blue-100 mask mask-circle">
-                    <FileText color="#0064df" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-normal text-sm">Muse - Madness</div>
-                  </div>
-                </div>
-              </td>
-              <td className="font-normal text-sm text-gray-400">6m</td>
-              <td className="font-normal text-sm text-gray-400">en-GB</td>
-              <td className="font-normal text-sm text-gray-400">Automatic</td>
-              <td className="font-normal text-sm text-gray-400">07/01/2023</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">
-                  <MoreHorizontal color="#4b5565" size={15} />
-                </button>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 flex justify-center items-center bg-blue-100 mask mask-circle">
-                    <FileText color="#0064df" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-normal text-sm">
-                      Metallica - King Nothing
+            {records.map((record, index) => {
+              return (
+                <tr key={index}>
+                  <th>
+                    <label>
+                      <input type="checkbox" className="checkbox" />
+                    </label>
+                  </th>
+                  <td>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 flex justify-center items-center bg-blue-100 mask mask-circle">
+                        <FileText color="#0064df" size={20} />
+                      </div>
+                      <div>
+                        <div className="font-normal text-sm">{record.name}</div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </td>
-              <td className="font-normal text-sm text-gray-400">5m</td>
-              <td className="font-normal text-sm text-gray-400">en-US</td>
-              <td className="font-normal text-sm text-gray-400">Automatic</td>
-              <td className="font-normal text-sm text-gray-400">07/01/2023</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">
-                  <MoreHorizontal color="#4b5565" size={15} />
-                </button>
-              </th>
-            </tr>
+                  </td>
+                  <td className="font-normal text-sm text-gray-400">
+                    {record.length}
+                  </td>
+                  <td className="font-normal text-sm text-gray-400">
+                    {record.language}
+                  </td>
+                  <td className="font-normal text-sm text-gray-400">
+                    {record.service}
+                  </td>
+                  <td className="font-normal text-sm text-gray-400">
+                    {record.uploaded}
+                  </td>
+                  <th>
+                    <div className="dropdown dropdown-bottom  dropdown-end btn btn-ghost btn-xs w-full h-10 flex items-center cursor-pointer hover:bg-gray-100">
+                      <div tabIndex="0" className="flex flex-col w-full">
+                        <MoreHorizontal color="#4b5565" size={15} />
+                      </div>
+                      <ul
+                        tabIndex="0"
+                        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48"
+                      >
+                        <li>
+                          <div className="flex items-center">
+                            <ExternalLink
+                              size={15}
+                              className="mr-3"
+                              color="#748ba7"
+                            />
+                            <p className="text-sm font-normal normal-case text-slate-500">
+                              View
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex items-center">
+                            <Link size={15} className="mr-3" color="#748ba7" />
+                            <p className="text-sm font-normal normal-case text-slate-500">
+                              Copy link
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex items-center">
+                            <Edit3 size={15} className="mr-3" color="#748ba7" />
+                            <p className="text-sm font-normal normal-case text-slate-500">
+                              Rename
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex items-center">
+                            <CornerUpRight
+                              size={15}
+                              className="mr-3"
+                              color="#748ba7"
+                            />
+                            <p className="text-sm font-normal normal-case text-slate-500">
+                              Move
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex items-center">
+                            <Trash color="#f86e72" size={15} className="mr-3" />
+                            <p className="text-sm font-normal text-red-400 normal-case">
+                              Delete
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </th>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

@@ -7,7 +7,7 @@ const NameDropdown = () => {
       <div tabIndex="0" className="flex flex-col">
         <div className="username flex justify-between items-center">
           <p className="uppercase text-md font-medium text-danger">
-            Mariona Pozo
+            Carlos Padron
           </p>
           <ChevronDown size={20} />
         </div>
