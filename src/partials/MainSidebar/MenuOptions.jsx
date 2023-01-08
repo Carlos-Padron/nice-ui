@@ -36,12 +36,12 @@ const MenuOptions = () => {
           <p className="text-sm">Invite</p>
         </div>
       </label>
-      <div className="w-full h-10 flex items-center cursor-pointer hover:bg-gray-100">
+      <Link to={'/members'} className="w-full h-10 flex items-center cursor-pointer hover:bg-gray-100">
         <div className="mx-4 flex items-center">
           <Settings color="#444ce7" size={15} className="mr-3" />
           <p className="text-sm">Settings & members</p>
         </div>
-      </div>
+      </Link>
       <div className="dropdown dropdown-bottom w-full h-10 flex items-center cursor-pointer hover:bg-gray-100">
         <div tabIndex="0" className="flex flex-col w-full">
           <div className="username flex justify-between items-center">

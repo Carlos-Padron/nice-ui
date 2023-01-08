@@ -130,8 +130,8 @@ const ProjectScreen = () => {
                     {record.uploaded}
                   </td>
                   <th>
-                    <div className="dropdown dropdown-bottom  dropdown-end btn btn-ghost btn-xs w-full h-10 flex items-center cursor-pointer hover:bg-gray-100">
-                      <div tabIndex="0" className="flex flex-col w-full">
+                    <div className="dropdown dropdown-bottom dropdown-end btn btn-ghost btn-xs  h-10 flex items-center cursor-pointer hover:bg-gray-100">
+                      <div tabIndex="0" className="flex justify-center w-full">
                         <MoreHorizontal color="#4b5565" size={15} />
                       </div>
                       <ul

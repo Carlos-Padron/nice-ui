@@ -12,11 +12,11 @@ const InviteModal = () => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">Add members</h3>
+          <h3 className="text-xl font-bold">Add members</h3>
           <h4 className="text-sm font-medium text-slate-400">
             Invite to your workspace
           </h4>
-          <h4 className="text-md font-medium text-slate-500 mt-4">
+          <h4 className="text-sm font-medium text-slate-500 mt-4">
             Enter email address and select a role
           </h4>
           <div className="flex justify-between">
