@@ -25,12 +25,16 @@ const MenuOptions = () => {
           <p className="text-sm">Vocabulary</p>
         </div>
       </label>
-      <Link className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100">
+      <label
+        onClick={() => navigate("/analytics")}
+        htmlFor="my-drawer-2"
+        className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100"
+      >
         <div className="mx-4 flex items-center">
           <BarChart2 color="#4ade80" size={15} className="mr-3" />
           <p className="text-sm">Analytics</p>
         </div>
-      </Link>
+      </label>
       <label
         onClick={() => navigate("/members")}
         htmlFor="my-drawer-2"

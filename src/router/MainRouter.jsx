@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AnalyticsScreen from "../screens/AnalyticsScreen";
 import BuyCredits from "../screens/BuyCredits";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import ProjectScreen from "../screens/ProjectScreen";
@@ -43,7 +44,7 @@ const MainRouter = () => {
           path="/analytics"
           element={
             <Template>
-              <VocabularyScreen />
+              <AnalyticsScreen />
             </Template>
           }
         />
