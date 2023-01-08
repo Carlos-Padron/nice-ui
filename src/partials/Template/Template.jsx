@@ -1,21 +1,28 @@
 import React from "react";
 import InviteModal from "../../components/InvateModal";
 import SearchModal from "../../components/SearchModal";
-import MainSidebar from "../MainSidebar/MainSidebar";
-import WorkspaceSidebar from "../WorkspaceSidebar/WorkspaceSidebar";
+import Header from "../Header/Header";
+import SidebarWrapper from "../MainSidebar/SidebarWrapper";
 
 const Template = ({ children }) => {
   return (
     <div className="flex bg-slate-50">
-      <WorkspaceSidebar />
-      <MainSidebar />
+      <div className="drawer drawer-mobile">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content">
+          <Header />
+          <div className="px-8 w-full h-full bg-gray-50">
+            {React.cloneElement(children)}
+          </div>
+          <SearchModal />
+          <InviteModal />
+        </div>
+        <div className="drawer-side">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
-      <div className="mx-8 w-full h-100 bg-gray-50">
-        {React.cloneElement(children)}
+          <SidebarWrapper />
+        </div>
       </div>
-
-      <SearchModal />
-      <InviteModal />
     </div>
   );
 };

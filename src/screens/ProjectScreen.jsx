@@ -34,18 +34,20 @@ const records = [
 const ProjectScreen = () => {
   return (
     <>
-      <div className="header my-8 flex justify-between flex-nowrap">
-        <h1 className="text-xl font-bold">My first project</h1>
-        <div className="actions flex justify-between flex-nowrap">
-          <button className="btn btn-primary btn-sm gap-2 mr-3 text-white normal-case">
+      <div className="header my-8 flex flex-wrap justify-between ">
+        <h1 className="text-xl font-bold w-full sm:w-3/12 md:w-3/12">
+          My first project
+        </h1>
+        <div className="actions flex flex-wrap justify-between sm:justify-end md:justify-end w-full sm:w-9/12 md:w-9/12 ">
+          <button className="btn btn-primary btn-sm gap-2 sm:mr-3 text-white normal-case">
             <UploadCloud color="#fff" size={15} />
             New file
           </button>
-          <button className="btn bg-white btn-sm gap-2 mr-3 text-slate-600 normal-case hover:bg-slate-50">
+          <button className="btn bg-white btn-sm gap-2 sm:mr-3 text-slate-600 normal-case hover:bg-slate-50">
             <FolderPlus color="#4b5565" size={15} />
             New folder
           </button>
-          <button className="btn bg-white btn-sm gap-2 mr-3 text-slate-600 normal-case hover:bg-slate-50">
+          <button className="btn bg-white btn-sm gap-2 sm:mr-3 text-slate-600 normal-case hover:bg-slate-50">
             <Share color="#4b5565" size={15} />
             Share
           </button>
@@ -81,119 +83,138 @@ const ProjectScreen = () => {
 
       {/* Table */}
 
-      <div className="w-full pt-8">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th className="bg-blue-300">
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th className="bg-blue-300 text-white">Name</th>
-              <th className="bg-blue-300 text-white">Length</th>
-              <th className="bg-blue-300 text-white">Language</th>
-              <th className="bg-blue-300 text-white">Service</th>
-              <th className="bg-blue-300 text-white">Uploaded</th>
-              <th className="bg-blue-300 text-white"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {records.map((record, index) => {
-              return (
-                <tr key={index}>
-                  <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
-                  </th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 flex justify-center items-center bg-blue-100 mask mask-circle">
-                        <FileText color="#0064df" size={20} />
+      <div className="pt-8">
+        <div className="overflow-x-auto">
+          <table className="table  w-full">
+            <thead>
+              <tr>
+                <th className="bg-blue-300">
+                  <label>
+                    <input type="checkbox" className="checkbox" />
+                  </label>
+                </th>
+                <th className="bg-blue-300 text-white">Name</th>
+                <th className="bg-blue-300 text-white">Length</th>
+                <th className="bg-blue-300 text-white">Language</th>
+                <th className="bg-blue-300 text-white">Service</th>
+                <th className="bg-blue-300 text-white">Uploaded</th>
+                <th className="bg-blue-300 text-white"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {records.map((record, index) => {
+                return (
+                  <tr key={index}>
+                    <th>
+                      <label>
+                        <input type="checkbox" className="checkbox" />
+                      </label>
+                    </th>
+                    <td>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 flex justify-center items-center bg-blue-100 mask mask-circle">
+                          <FileText color="#0064df" size={20} />
+                        </div>
+                        <div>
+                          <div className="font-normal text-sm">
+                            {record.name}
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="font-normal text-sm">{record.name}</div>
+                    </td>
+                    <td className="font-normal text-sm text-gray-400">
+                      {record.length}
+                    </td>
+                    <td className="font-normal text-sm text-gray-400">
+                      {record.language}
+                    </td>
+                    <td className="font-normal text-sm text-gray-400">
+                      {record.service}
+                    </td>
+                    <td className="font-normal text-sm text-gray-400">
+                      {record.uploaded}
+                    </td>
+                    <th>
+                      <div className="dropdown dropdown-bottom dropdown-end btn btn-ghost btn-xs  h-10 flex items-center cursor-pointer hover:bg-gray-100">
+                        <div
+                          tabIndex="0"
+                          className="flex justify-center w-full"
+                        >
+                          <MoreHorizontal color="#4b5565" size={15} />
+                        </div>
+                        <ul
+                          tabIndex="0"
+                          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48"
+                        >
+                          <li>
+                            <div className="flex items-center">
+                              <ExternalLink
+                                size={15}
+                                className="mr-3"
+                                color="#748ba7"
+                              />
+                              <p className="text-sm font-normal normal-case text-slate-500">
+                                View
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="flex items-center">
+                              <Link
+                                size={15}
+                                className="mr-3"
+                                color="#748ba7"
+                              />
+                              <p className="text-sm font-normal normal-case text-slate-500">
+                                Copy link
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="flex items-center">
+                              <Edit3
+                                size={15}
+                                className="mr-3"
+                                color="#748ba7"
+                              />
+                              <p className="text-sm font-normal normal-case text-slate-500">
+                                Rename
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="flex items-center">
+                              <CornerUpRight
+                                size={15}
+                                className="mr-3"
+                                color="#748ba7"
+                              />
+                              <p className="text-sm font-normal normal-case text-slate-500">
+                                Move
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="flex items-center">
+                              <Trash
+                                color="#f86e72"
+                                size={15}
+                                className="mr-3"
+                              />
+                              <p className="text-sm font-normal text-red-400 normal-case">
+                                Delete
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
-                    </div>
-                  </td>
-                  <td className="font-normal text-sm text-gray-400">
-                    {record.length}
-                  </td>
-                  <td className="font-normal text-sm text-gray-400">
-                    {record.language}
-                  </td>
-                  <td className="font-normal text-sm text-gray-400">
-                    {record.service}
-                  </td>
-                  <td className="font-normal text-sm text-gray-400">
-                    {record.uploaded}
-                  </td>
-                  <th>
-                    <div className="dropdown dropdown-bottom dropdown-end btn btn-ghost btn-xs  h-10 flex items-center cursor-pointer hover:bg-gray-100">
-                      <div tabIndex="0" className="flex justify-center w-full">
-                        <MoreHorizontal color="#4b5565" size={15} />
-                      </div>
-                      <ul
-                        tabIndex="0"
-                        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-48"
-                      >
-                        <li>
-                          <div className="flex items-center">
-                            <ExternalLink
-                              size={15}
-                              className="mr-3"
-                              color="#748ba7"
-                            />
-                            <p className="text-sm font-normal normal-case text-slate-500">
-                              View
-                            </p>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="flex items-center">
-                            <Link size={15} className="mr-3" color="#748ba7" />
-                            <p className="text-sm font-normal normal-case text-slate-500">
-                              Copy link
-                            </p>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="flex items-center">
-                            <Edit3 size={15} className="mr-3" color="#748ba7" />
-                            <p className="text-sm font-normal normal-case text-slate-500">
-                              Rename
-                            </p>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="flex items-center">
-                            <CornerUpRight
-                              size={15}
-                              className="mr-3"
-                              color="#748ba7"
-                            />
-                            <p className="text-sm font-normal normal-case text-slate-500">
-                              Move
-                            </p>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="flex items-center">
-                            <Trash color="#f86e72" size={15} className="mr-3" />
-                            <p className="text-sm font-normal text-red-400 normal-case">
-                              Delete
-                            </p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </th>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                    </th>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

@@ -11,7 +11,7 @@ const WorkspaceIcon = ({ active = false, color, workspaceName }) => {
         }`}
       ></div>
       <div
-        className={`w-10 h-10 ${color} mask mask-squircle flex justify-center items-center mx-auto cursor-pointer hover:drop-shadow-lg`}
+        className={`w-10 h-10 ${color}-400 mask mask-squircle flex justify-center items-center mx-auto cursor-pointer`}
       >
         <p className="prose text-white font-normal font-sans text-sm">
           {workspaceName}

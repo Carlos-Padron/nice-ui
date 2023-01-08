@@ -3,16 +3,24 @@ import { ChevronDown } from "react-feather";
 
 const NameDropdown = () => {
   return (
-    <div className="dropdown cursor-pointer w-full px-4 pb-4">
+    <div className="dropdown cursor-pointer px-4">
+      {/*w-full  px-4 pb-4 */}
       <div tabIndex="0" className="flex flex-col">
-        <div className="username flex justify-between items-center">
-          <p className="uppercase text-md font-medium text-danger">
-            Carlos Padron
-          </p>
+        <div className="flex justify-center items-center">
+          <div className="wrapper mr-4">
+            <div className="username flex justify-between items-center">
+              <p className="uppercase text-md font-medium text-danger">
+                Carlos Padron
+              </p>
+              {/* <ChevronDown size={20} /> */}
+            </div>
+            <div className="workspace-name flex justify-between items-center">
+              <p className="text-sm font-medium text-primary">
+                Workspace name{" "}
+              </p>
+            </div>
+          </div>
           <ChevronDown size={20} />
-        </div>
-        <div className="workspace-name flex justify-between items-center">
-          <p className="text-sm font-medium text-primary">Workspace name </p>
         </div>
       </div>
       <ul
