@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BuyCredits from "../screens/BuyCredits";
+import NotFoundScreen from "../screens/NotFoundScreen";
 import ProjectScreen from "../screens/ProjectScreen";
 import SettAndMembersScreen from "../screens/SettAndMembersScreen";
 import VocabularyScreen from "../screens/VocabularyScreen";
@@ -37,7 +38,19 @@ const MainRouter = () => {
             </Template>
           }
         />
+        <Route
+          exact
+          path="/analytics"
+          element={
+            <Template>
+              <VocabularyScreen />
+            </Template>
+          }
+        />
         <Route exact path="/buy-credits" element={<BuyCredits />} />
+        <Route exact path="/buy-credits" element={<BuyCredits />} />
+        <Route path='*' element={<NotFoundScreen />} />
+
       </Routes>
     </BrowserRouter>
   );
