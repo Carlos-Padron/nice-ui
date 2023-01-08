@@ -3,7 +3,7 @@ import { UserPlus } from "react-feather";
 
 const records = [
   {
-    name: "Carlos Padron",
+    name: "Carlos Padron Carlos Padron Carlos Padron ",
     accessLevel: "Owner",
     email: "carlos@example.com",
   },
@@ -75,7 +75,8 @@ const SettAndMembersScreen = () => {
             Add, remove, or change permission
           </h2>
         </div>
-        <div className="actions mt-6 flex flex-nowrap justify-between items-center">
+
+        <div className="actions mt-6 flex flex-wrap justify-between items-center">
           <div className="flex flex-nowrap justify-between items-center">
             <label
               htmlFor="invite-modal"
@@ -90,7 +91,7 @@ const SettAndMembersScreen = () => {
               className="input input-bordered input-sm input-primary w-full max-w-xs"
             />
           </div>
-          <div className="flex flex-nowrap justify-between items-center">
+          <div className="flex flex-wrap justify-between items-center mt-4 sm:mt-0">
             <div className="btn-group">
               <button
                 className={`btn btn-sm bg-white text-blue-500 btn-primary   ${
@@ -138,12 +139,12 @@ const SettAndMembersScreen = () => {
       </div>
       {/*  */}
 
-      <div className="w-full pt-8">
+      <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>
               <th className="bg-blue-300 text-white">Name</th>
-              <th className="bg-blue-300 text-white w-1/4">Access Level</th>
+              <th className="bg-blue-300 text-white">Access Level</th>
             </tr>
           </thead>
           <tbody>

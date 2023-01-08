@@ -38,22 +38,27 @@ const BuyCredits = () => {
           <ArrowLeft color="#4b5565" size={20} />
         </button>
       </div>
-      <div className="my-8  mx-28">
+      <div className="my-8 mx-5 md:mx-16 lg:mx-28">
         <div className="title">
           <h1 className="text-xl font-bold">Buy hours</h1>
           <h3 className="text-md font-medium text-slate-400">
             Add credits to your account
           </h3>
         </div>
-        <div className="content mt-10 flex justify-between flex-nowrap">
-          <div className="w-6/12">
+      </div>
+
+      {/*  */}
+
+      <div className="my-8 mx-5 md:mx-16 lg:mx-28">
+        <div className="content mt-10 flex justify-between flex-wrap">
+          <div className="w-full sm:w-7/12 md:w-6/12">
             <h3 className="text-sm font-medium text-slate-500 ">
               How much do you need?
             </h3>
             <div className="card w-full bg-base-100 shadow-md">
               <div className="card-body">
                 <h2 className="card-title">Use slider to adjust</h2>
-                <div className="w-full flex flex-nowrap justify-between text-xs px-2">
+                <div className="w-full flex  justify-between text-xs px-2">
                   <span>1</span>
                   <span>25</span>
                   <span>50</span>
@@ -68,22 +73,22 @@ const BuyCredits = () => {
                   step="1"
                   onChange={changeHours}
                 />
-                <div className="w-full flex flex-nowrap justify-between text-xs px-2">
+                <div className="w-full flex  justify-between text-xs px-2">
                   <span className="invisible">|</span>
                   <span className="text-xs font-medium text-slate-500">
                     $12/hour
                   </span>
                   <span className="invisible">|</span>
-                  <span className="text-xs font-medium text-slate-500 flex  flex-nowrap flex-col justify-center items-center">
+                  <span className="text-xs font-medium text-slate-500 flex   flex-col justify-center items-center">
                     $11/hour
-                    <div className="badge badge-success text-white text-xs">
+                    <div className="badge badge-success text-white text-xs text-center">
                       9% OFF
                     </div>
                   </span>
                   <span className="invisible">|</span>
-                  <span className="text-xs font-medium text-slate-500 flex flex-nowrap flex-col justify-center items-center">
+                  <span className="text-xs font-medium text-slate-500 flex  flex-col justify-center items-center">
                     $9.6/hour
-                    <div className="badge badge-success text-white text-xs">
+                    <div className="badge badge-success text-white text-xs text-center">
                       20% OFF
                     </div>
                   </span>
@@ -93,7 +98,7 @@ const BuyCredits = () => {
             </div>
           </div>
 
-          <div className="w-5/12">
+          <div className="w-full sm:w-4/12 md:w-5/12 mt-5 sm:mt-0">
             <h3 className="text-sm font-medium text-slate-500 ">Summary</h3>
             <div className="card w-full bg-base-100 shadow-md">
               <div className="card-body">
@@ -107,6 +112,8 @@ const BuyCredits = () => {
           </div>
         </div>
       </div>
+
+      {/*  */}
     </div>
   );
 };
