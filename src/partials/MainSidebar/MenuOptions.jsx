@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 const MenuOptions = () => {
   const navigate = useNavigate();
 
-
   return (
     <>
       <Link
@@ -16,12 +15,16 @@ const MenuOptions = () => {
           <p className="text-sm">Credits</p>
         </div>
       </Link>
-      <Link className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100">
+      <label
+        onClick={() => navigate("/vocabulary")}
+        htmlFor="my-drawer-2"
+        className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100"
+      >
         <div className="mx-4 flex items-center">
           <BookOpen color="#f3c715" size={15} className="mr-3" />
           <p className="text-sm">Vocabulary</p>
         </div>
-      </Link>
+      </label>
       <Link className="w-full h-10  flex items-center cursor-pointer hover:bg-gray-100">
         <div className="mx-4 flex items-center">
           <BarChart2 color="#4ade80" size={15} className="mr-3" />

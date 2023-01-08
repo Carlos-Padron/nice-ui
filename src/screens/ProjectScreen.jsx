@@ -83,9 +83,9 @@ const ProjectScreen = () => {
 
       {/* Table */}
 
-      <div className="pt-8">
-        <div className="overflow-x-autos">
-          <table className="table  w-full">
+      <div className="pt-8 ">
+        <div className="overflow-x-auto h-96">
+          <table className="table w-full">
             <thead>
               <tr>
                 <th className="bg-blue-300">

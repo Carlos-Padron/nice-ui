@@ -11,7 +11,7 @@ const MainSidebar = () => {
       {/* w-64 */}
       {/* <NameDropdown /> */}
       {/* Regular menu option */}
-      <label className="btn btn-ghost normal-case text-xl w-full my-2">
+      <label className="btn btn-ghost normal-case text-xl w-full my-2 text-primary">
         daisyUI
       </label>
       <MenuOptions />

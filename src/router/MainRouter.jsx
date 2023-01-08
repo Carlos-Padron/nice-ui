@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BuyCredits from "../screens/BuyCredits";
 import ProjectScreen from "../screens/ProjectScreen";
 import SettAndMembersScreen from "../screens/SettAndMembersScreen";
+import VocabularyScreen from "../screens/VocabularyScreen";
 
 import Template from "./../partials/Template/Template";
 const MainRouter = () => {
@@ -24,6 +25,15 @@ const MainRouter = () => {
           element={
             <Template>
               <SettAndMembersScreen />
+            </Template>
+          }
+        />
+        <Route
+          exact
+          path="/vocabulary"
+          element={
+            <Template>
+              <VocabularyScreen />
             </Template>
           }
         />
